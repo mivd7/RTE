@@ -1,3 +1,5 @@
+let editor;
+
 DecoupledEditor
     .create(document.querySelector('#editor'), {
         fontSize: {
@@ -18,16 +20,21 @@ DecoupledEditor
             ]
         },
     })
-    .then(editor => {
+    .then(newEditor => {
         const toolbarContainer = document.querySelector('#toolbar-container');
-
-        toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+        toolbarContainer.appendChild(newEditor.ui.view.toolbar.element);
+        editor = newEditor;
     })
     .catch(error => {
         console.error(error);
     });
 
-function handleClick() {
+function handleSubmit() {
+    const editorData = editor.getData();
+    console.log(editorData)
+}
+
+function showHTML() {
     var editorInput = document.getElementById('editor')
     var output = document.getElementById('output');
     output.insertAdjacentText("beforebegin", editorInput.innerHTML)
