@@ -3,11 +3,9 @@ document.body.onload = appendTextarea();
 
 function appendTextarea() {
     const editorDiv = document.getElementById("editor");
-    const textarea = document.createElement('textarea');
     const paragraph = editorDiv.getElementsByTagName('p')[0];
-    var att = document.createAttribute("class");       // Create a "class" attribute
-    att.value = "democlass";                           // Set the value of the class attribute
-    textarea.setAttributeNode(att);     
+    console.log(paragraph)
+
 
 
 }
@@ -37,7 +35,7 @@ DecoupledEditor
         const toolbarContainer = document.querySelector('#toolbar-container');
         toolbarContainer.appendChild(newEditor.ui.view.toolbar.element);
         editor = newEditor;
-        // appendTextarea();
+        appendTextarea();
     })
     .catch(error => {
         console.error(error);
