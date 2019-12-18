@@ -15,13 +15,26 @@
         </textarea>
         <p><button id="submit" onclick="handleClick()">SUBMIT</button>
     </form>
-    <script>
+    <script type="module">
+        // import ClassicEditor from './node_modules/@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+        // import {Plugins, Toolbar} from './node_modules/@ckeditor/ckeditor5-build-classic';
         
         let editor;
         ClassicEditor
-            .create(document.querySelector('#editor'))
+            .create(document.querySelector('#editor'), {
+                // fontSize: {
+                //     options: [
+                //         12,
+                //         14,
+                //         'default',
+                //         16
+                //     ]
+                // },
+                // toolbar: ['fontSize']
+            })
             .then(newEditor => {
                 editor = newEditor;
+                console.log(Array.from( editor.ui.componentFactory.names() ))
             })
             .catch(error => {
                 console.error(error);

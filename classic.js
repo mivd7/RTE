@@ -1,11 +1,22 @@
+import ClassicEditor from './node_modules/@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import {Plugins, Toolbar} from './node_modules/@ckeditor/ckeditor5-build-classic';
+import {Font} from './node_modules/@ckeditor/ckeditor5-font';
+
 let editor;
 
-ClassicEditor
-    .create(document.querySelector('#editor'))
-    .then(newEditor => {
-        editor = newEditor;
+const config = {
+  plugins: [...Plugins, Font],
+        fontSize: {
+                options: [
+                12,
+                14,
+                'default',
+                18
+                ]
+            },
+        toolbar: [
+            ...Toolbar, 'fontSize',
+        ],
+}
 
-    })
-    .catch(error => {
-        console.error(error);
-    });
+export default config; 

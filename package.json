@@ -1,0 +1,23 @@
+{
+  "name": "rte-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mivd7/RTE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mivd7/RTE/issues"
+  },
+  "homepage": "https://github.com/mivd7/RTE#readme",
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^16.0.0",
+    "@ckeditor/ckeditor5-font": "^16.0.0"
+  }
+}
